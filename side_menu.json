@@ -1,0 +1,82 @@
+[
+  {
+    "main_menu": "Company",
+    "side_menu": [
+      { "name": "Overview", "link": "https://www.qburst.com/company/" },
+      {
+        "name": "About QBurst",
+        "link": "https://www.qburst.com/company/about/"
+      },
+      {
+        "name": "Leadership Team",
+        "link": "https://www.qburst.com/company/about/management/"
+      },
+      { "name": "Clients", "link": "https://www.qburst.com/clients/" },
+      {
+        "name": "Partners",
+        "link": "https://www.qburst.com/company/partners/"
+      },
+      { "name": "Corporate Responsibility", "link": "https://csr.qburst.com/" },
+      { "name": "News", "link": "https://news.qburst.com/" },
+      {
+        "name": "Our Locations",
+        "link": "https://www.qburst.com/company/contact/"
+      },
+      { "name": "Overview", "link": "https://www.qburst.com/company/" },
+      {
+        "name": "Pay Your Invoice",
+        "link": "https://www.payumoney.com/paybypayumoney/#/84F0EDF595FC714C648493CB87879645"
+      }
+    ]
+  },
+  {
+    "main_menu": "Approach",
+    "side_menu": [
+      { "name": "Overview", "link": "https://www.qburst.com/approach/" },
+      {
+        "name": "Architect",
+        "link": "https://www.qburst.com/approach/architecture/"
+      },
+      { "name": "Design", "link": "https://www.qburst.com/approach/design/" },
+      {
+        "name": "Development",
+        "link": "https://www.qburst.com/approach/development/"
+      },
+      { "name": "Testing", "link": "https://www.qburst.com/approach/testing/" },
+      {
+        "name": "Tools & Lab",
+        "link": "https://www.qburst.com/approach/testing-tools-lab/"
+      },
+      {
+        "name": "Delivery Model",
+        "link": "https://www.qburst.com/approach/delivery/"
+      }
+    ]
+  },
+  {
+    "main_menu": "Careers",
+    "side_menu": [
+      { "name": "Overview", "link": "https://www.qburst.com/company/career/" },
+      {
+        "name": "Open Positions",
+        "link": "https://www.qburst.com/company/career/openings/"
+      },
+      {
+        "name": "Entry-Level Opportunities",
+        "link": "https://www.qburst.com/company/career/entry-level-openings/"
+      },
+      {
+        "name": "Submit Resume",
+        "link": "https://www.qburst.com/company/career/apply/"
+      }
+    ]
+  },
+  {
+    "main_menu": "Our Locations",
+    "link": "https://www.qburst.com/company/contact/"
+  },
+  {
+    "main_menu": "Blog",
+    "link": "https://www.qburst.com/company/contact/"
+  }
+]
