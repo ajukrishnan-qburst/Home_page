@@ -31,12 +31,10 @@ function closeNav() {
 function menuPopUp() {
   var dropdown = document.getElementsByClassName("dropdown-sub-menu");
   var i;
-  console.log("a");
   for (i = 0; i < dropdown.length; i++) {
     dropdown[i].addEventListener("click", function () {
       this.classList.toggle("active");
       var dropdownContent = this.nextElementSibling;
-      console.log(dropdownContent);
       if (dropdownContent.style.display === "block") {
         dropdownContent.style.display = "none";
       } else {
@@ -100,3 +98,13 @@ function createSubMenu(data) {
     menuObject.side_menu && parent.appendChild(div1);
   });
 }
+
+function openPage(pageName) {
+  var i, tabcontent;
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+  document.getElementById(pageName).style.display = "flex";
+}
+document.getElementById("defaultOpen").click();
