@@ -635,6 +635,9 @@ h6 {
 .outer-header-container {
   width: 100%;
   background-color: #fceddf;
+  position: sticky;
+  top: 0;
+  z-index: 2;
 }
 
 .inner-header-container {
@@ -875,7 +878,7 @@ h6 {
   margin-top: 40px;
   border: 1px solid #c0c0c0;
   width: 80%;
-  height: 50px;
+  /* height: 50px; */
 }
 
 .region div {
@@ -917,31 +920,43 @@ h6 {
 }
 
 .tablink {
-  background-color: transparent;
+  background-color: #fae7c7;
+  height: 45px;
   color: #2c2d2a;
   font-weight: 500;
   font-family: 'Poppins', sans-serif;
-  float: left;
-  outline: none;
-  display: table-cell;
-  cursor: pointer;
-  padding: 5px 16px;
+  padding: 10px;
   font-size: 17px;
   width: 25%;
   border: 1px solid #c1c1c1;
   cursor: pointer;
 }
 
-.tablink:hover {
+.tablink:active {
   background-color: #3e8e41;
-  color: white;
+  color: #fff;
+  transition: all 0.1ms ease-out;
 }
 
-.tabcontent {
-  color: black;
-  /* display: none; */
+.tablink--active{
+  background-color: #3e8e41;
+  color: #fff;
+  transition: all 0.1ms ease-out;
+
 }
 
+.tablink--active::after {
+  opacity: 1;
+  content: "";
+  border: 20px solid #000;
+  border-color: #3e8e41 transparent transparent;
+  position: relative;
+  top: 7px;
+  left: 40%;
+  width: 2%;
+  display: block;
+  transition: all 0.1ms ease-out;
+}
 
 #contact-page {
   max-width: 1200px;
@@ -954,29 +969,44 @@ h6 {
   padding-bottom: 100px;
 }
 
-.tab-sub-locations {
+.tabcontent {
   display: flex;
-  flex-wrap: wrap;
-  /* justify-content: space-around; */
   max-width: 960px;
-  width: 42%;
   margin-left: 120px;
+  width: 100%;
   padding-top: 50px;
 }
 
-.tabcontent {
+.tabcontent-adresses {
   display: flex;
   flex-wrap: wrap;
+  max-width: 960px;
+  width: 56%;
   row-gap: 1px;
+  overflow-y: scroll;
+
+}
+
+.tabcontent-adresses::-webkit-scrollbar {
+      display: none;
+    }
+
+
+.tabcontent-img{
+  z-index: 1;
+  position: sticky;
+  top: 150px;
+  bottom: 250px;
 }
 
 .regions {
   padding: 15px 15px;
   max-width: 250px;
-  max-height: 250px;
+  max-height: 225px;
   height: 100%;
   width: 100%;
 }
+
 
 .regions:nth-child(odd) {
   border: 0.1mm;
@@ -999,6 +1029,10 @@ h6 {
   padding-bottom: 5px;
 }
 
+.fa-location-dot {
+
+  color: black;
+}
 
 /*................................................
     6. BODY SECTION
@@ -1346,6 +1380,7 @@ h6 {
   margin: 0 auto;
   padding-top: 50px;
   padding-bottom: 50px;
+  
 }
 
 .inner-what-they-saying-container h2 {
@@ -1356,12 +1391,19 @@ h6 {
   color: #2c2d2a;
   padding-left: 10px;
   padding-right: 10px;
+
 }
 
 #what-they-said {
   display: flex;
   justify-content: space-between;
   padding-bottom: 10px;
+  overflow-x: scroll;
+  margin: 0 10px;
+}
+
+#what-they-said::-webkit-scrollbar{
+  display: none;
 }
 
 .said-image-content {
@@ -1381,22 +1423,24 @@ h6 {
 
 .said {
   background-color: white;
-  max-height: 225px;
+  max-width: 400px;
   width: 100%;
-  max-width: 325px;
-  height: 100%;
+  margin: 10px 10px;
+}
+.said:hover {
+  margin: 0 40px;
+  transform: scale(1.2);
 }
 
 .said p {
   font-size: 18px;
   color: #2c2d2a;
-  padding-left: 20px;
-  width: 100%;
-  max-width: 270px;
-  padding-top: 20px;
+  padding: 25px 25px;
+  width: 375px;
   line-height: 24px;
-  padding-bottom: 25px;
 }
+
+
 
 .said-names {
   display: flex;
