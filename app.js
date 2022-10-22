@@ -24,9 +24,12 @@ function openNav() {
   document.getElementById("side-bar").style.width = "300px";
 }
 
+
+
 function closeNav() {
   document.getElementById("side-bar").style.width = "0";
 }
+
 
 function menuPopUp() {
   var dropdown = document.getElementsByClassName("dropdown-sub-menu");
@@ -35,11 +38,9 @@ function menuPopUp() {
     dropdown[i].addEventListener("click", function () {
       this.classList.toggle("active");
       var dropdownContent = this.nextElementSibling;
-      if (dropdownContent.style.display === "block") {
-        dropdownContent.style.display = "none";
-      } else {
-        dropdownContent.style.display = "block";
-      }
+      dropdownContent.style.display === "block"
+        ? (dropdownContent.style.display = "none")
+        : (dropdownContent.style.display = "block");
     });
   }
 }
@@ -71,9 +72,8 @@ function createMainHeader(data) {
     const anchorTag = document.createElement("a");
     anchorTag.setAttribute("class", "main-menu-header dropdown-sub-menu");
     anchorTag.setAttribute("id", `${menuObject.main_menu}-main-menu`);
-
+    menuObject.main_menu === "Our Locations" && anchorTag.setAttribute("href", 'https://ajukrishnan-qburst.github.io/location_page/')
     anchorTag.innerHTML = menuObject.main_menu;
-
     menuObject.side_menu && anchorTag.appendChild(icon);
     div1.appendChild(anchorTag);
     parent.appendChild(div1);
@@ -87,7 +87,6 @@ function createSubMenu(data) {
     let div1 = document.createElement("div");
     div1.setAttribute("class", "sub-menu-container");
     div1.setAttribute("id", `${menuObject.main_menu}-sub-menu-container`);
-    console.log(menuObject.side_menu);
     menuObject.side_menu &&
       menuObject.side_menu.forEach((subMenuObject) => {
         anchorTag = document.createElement("a");
