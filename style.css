@@ -197,7 +197,7 @@ table {
   border-spacing: 0;
 }
 
-input[type="search"]::-webkit-search-cancel-button,
+/* input[type="search"]::-webkit-search-cancel-button,
 input[type="search"]::-webkit-search-decoration,
 input[type="search"]::-webkit-search-results-button,
 input[type="search"]::-webkit-search-results-decoration {
@@ -205,7 +205,8 @@ input[type="search"]::-webkit-search-results-decoration {
   -moz-appearance: none;
 }
 
-input[type="search"] {
+*/
+/* input[type="search"] {
   -webkit-appearance: none;
   -moz-appearance: none;
   -webkit-box-sizing: content-box;
@@ -213,6 +214,7 @@ input[type="search"] {
   box-sizing: content-box;
 }
 
+*/
 textarea {
   overflow: auto;
   vertical-align: top;
@@ -391,15 +393,16 @@ select {
 button,
 html input[type="button"],
 /* 1 */
-input[type="reset"],
+/* input[type="reset"],
 input[type="submit"] {
   -webkit-appearance: button;
-  /* 2 */
-  cursor: pointer;
-  /* 3 */
-  *overflow: visible;
-  /* 4 */
-}
+    */
+/* 2 */
+/* cursor: pointer; */
+/* 3 */
+/* *overflow: visible; */
+/* 4 */
+/* } */
 
 /**
  * Re-set default cursor for disabled elements.
@@ -430,35 +433,37 @@ input[type="radio"]
  *    (include `-moz` to future-proof).
  */
 
-input[type="search"] {
-  -webkit-appearance: textfield;
-  /* 1 */
-  -moz-box-sizing: content-box;
-  -webkit-box-sizing: content-box;
-  /* 2 */
-  box-sizing: content-box;
-}
+/* input[type="search"] {
+  -webkit-appearance: textfield; */
+/* 1 */
+/* -moz-box-sizing: content-box;
+                -webkit-box-sizing: content-box; */
+/* 2 */
+/* box-sizing: content-box;
+              } */
 
 /**
  * Remove inner padding and search cancel button in Safari 5 and Chrome
  * on OS X.
  */
 
-input[type="search"]::-webkit-search-cancel-button,
+/* input[type="search"]::-webkit-search-cancel-button,
 input[type="search"]::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
+*/
 /**
  * Remove inner padding and border in Firefox 3+.
  */
 
-button::-moz-focus-inner,
+/* button::-moz-focus-inner,
 input::-moz-focus-inner {
   border: 0;
   padding: 0;
 }
 
+*/
 /**
  * 1. Remove default vertical scrollbar in IE 6/7/8/9.
  * 2. Improve readability and alignment in all browsers.
@@ -630,6 +635,9 @@ h6 {
 .outer-header-container {
   width: 100%;
   background-color: #fceddf;
+  position: sticky;
+  top: 0;
+  z-index: 2;
 }
 
 .inner-header-container {
@@ -639,6 +647,7 @@ h6 {
   display: flex;
   justify-content: space-between;
   padding-top: 20px;
+  padding-bottom: 10px;
 }
 
 .navbar-names {
@@ -702,13 +711,328 @@ h6 {
   left: 0;
   opacity: 0;
 }
+
 .navbar-names li:hover::after {
   opacity: 1;
 }
-.mobile-icon{
+
+.toggle {
+  cursor: pointer;
+}
+
+.side-menu {
+  height: 100%;
+  max-width: 350px;
+  width: 0;
+  z-index: 1;
+  position: fixed;
+  top: 0;
+  right: 0;
+  font-size: 36px;
+  background-color: #fff;
+  overflow-x: hidden;
+  padding-top: 15px;
+  transition: 0.3s ease;
+}
+
+.side-menu::after {
   display: none;
 }
 
+.side-menu::-webkit-scrollbar {
+  width: 0px;
+}
+
+.side-menu.active {
+  left: 0;
+}
+
+.side-menu .menu {
+  width: 100%;
+}
+
+.side-menu .menu .main-menu-header {
+  position: relative;
+}
+
+.main-menu-header {
+  padding: 25px 25px 15px 25px;
+  text-decoration: none;
+  font-size: 28px;
+  font-weight: 700;
+  font-family: 'Poppins', sans-serif;
+  color: #2c2d2a;
+  display: block;
+  width: 100%;
+  text-align: left;
+  outline: none;
+  cursor: pointer;
+}
+
+.side-bar .menu .main-menu-header i {
+  margin-right: 15px;
+}
+
+.side-bar .menu .main-menu-header a .dropdown {
+  position: absolute;
+  right: 0;
+  margin: 20px;
+  transition: 0.3s ease;
+  display: block;
+}
+
+.fa-chevron-down {
+  padding-left: 10px;
+}
+
+.sub-menu-container {
+  display: none;
+}
+
+.sub-menu-container a {
+  padding: 0px 35px 5px 75px;
+  font-size: 18px;
+  font-weight: 500;
+  font-family: 'Poppins', sans-serif;
+  user-select: none;
+  color: #323232;
+  display: block;
+
+}
+
+.sub-menu-container a:hover {
+  cursor: pointer;
+}
+
+.close-btn {
+  width: 110px;
+  top: 0;
+  left: 200px;
+  font-size: 36px;
+  padding-left: 275px;
+  padding-right: 25px;
+}
+
+.open-btn {
+  font-size: 15px;
+  background-color: #fceddf;
+  border: none;
+  border-radius: 50%;
+}
+
+.open-btn:hover {
+  background-color: #e7a136;
+}
+
+.main-menu-header {
+  display: block;
+}
+
+.active {
+  color: #e7a136;
+}
+
+.active i {
+  transform: rotate(180deg);
+}
+
+.sub-menu-container a:hover {
+  color: #797979;
+  font-weight: 700;
+  font-family: 'Poppins', sans-serif;
+}
+
+
+/*................................................
+     CONTACT STYLING SECTION
+.................................................*/
+
+#breadcrumb {
+  padding-top: 20px;
+  padding-left: 90px;
+}
+
+#breadcrumb a {
+  text-decoration: none;
+  color: #000;
+}
+
+#breadcrumb span {
+  color: #e7a136;
+  font-size: 18px;
+  font-size: 400;
+  font-family: 'Poppins', sans-serif;
+}
+
+#contact-heading {
+  color: #e7a136;
+  text-align: center;
+  font-size: 40px;
+  font-weight: 900;
+  margin-top: 40px;
+  text-align: center;
+  padding-bottom: 50px;
+}
+
+.region {
+  margin-top: 40px;
+  border: 1px solid #c0c0c0;
+  width: 80%;
+  /* height: 50px; */
+}
+
+.region div {
+  font-size: 22px;
+  color: #000;
+  text-align: center;
+  border: 1px solid #c0c0c0;
+  width: 100%;
+  padding-top: 10px;
+  background-color: #f7f7f7;
+}
+
+.regionHeading {
+  font-weight: 400;
+  font-size: 22px;
+  color: #000;
+  text-align: center;
+  border: 1px solid #c0c0c0;
+  width: 100%;
+  padding-top: 10px;
+  background-color: #f7f7f7;
+}
+
+.location-container {
+  background-color: #fceddf;
+  margin: 0 auto;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 80%;
+}
+
+.flex-box {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+}
+
+.tablink {
+  background-color: #fae7c7;
+  height: 45px;
+  color: #2c2d2a;
+  font-weight: 500;
+  font-family: 'Poppins', sans-serif;
+  padding: 10px;
+  font-size: 17px;
+  width: 25%;
+  border: 1px solid #c1c1c1;
+  cursor: pointer;
+}
+
+.tablink:active {
+  background-color: #3e8e41;
+  color: #fff;
+  transition: all 0.1ms ease-out;
+}
+
+.tablink--active {
+  background-color: #3e8e41;
+  color: #fff;
+  transition: all 0.1ms ease-out;
+
+}
+
+.tablink--active::after {
+  content: "";
+  border: 10px solid #000;
+  border-color: #3e8e41 transparent transparent;
+  position: relative;
+  top: 7px;
+  left: 40%;
+  width: 2%;
+  display: block;
+  transition: all 0.1ms ease-out;
+}
+
+#contact-page {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  background-color: #fceddf;
+}
+
+.main-body-location-page {
+  padding-bottom: 100px;
+}
+
+.tabcontent {
+  display: flex;
+  max-width: 960px;
+  margin-left: 120px;
+  width: 100%;
+  padding-top: 50px;
+}
+
+.tabcontent-adresses {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 960px;
+  width: 56%;
+  row-gap: 1px;
+  overflow-y: scroll;
+
+}
+
+.tabcontent-adresses::-webkit-scrollbar {
+  display: none;
+}
+
+
+.tabcontent-img {
+  z-index: 1;
+  position: sticky;
+  top: 150px;
+  bottom: 250px;
+}
+
+.regions {
+  padding: 15px 15px;
+  max-width: 250px;
+  max-height: 225px;
+  height: 100%;
+  width: 100%;
+}
+
+
+
+.regions:nth-child(odd) {
+  border: 0.1mm;
+  border-style: none dashed dashed none;
+  border-color: grey;
+}
+
+.regions:nth-child(even) {
+  border: 0.1mm;
+  border-style: none none dashed none;
+  border-color: grey;
+}
+
+.borderDefault {
+  border: 0.5px dashed red !important;
+  border-radius: 7px;
+}
+
+.region p {
+  padding-bottom: 5px;
+}
+
+.fa-location-dot {
+
+  color: black;
+}
 
 /*................................................
     6. BODY SECTION
@@ -1056,6 +1380,7 @@ h6 {
   margin: 0 auto;
   padding-top: 50px;
   padding-bottom: 50px;
+
 }
 
 .inner-what-they-saying-container h2 {
@@ -1066,12 +1391,19 @@ h6 {
   color: #2c2d2a;
   padding-left: 10px;
   padding-right: 10px;
+
 }
 
-.what-they-said {
+#what-they-said {
   display: flex;
   justify-content: space-between;
   padding-bottom: 10px;
+  overflow-x: scroll;
+  margin: 0 10px;
+}
+
+#what-they-said::-webkit-scrollbar {
+  display: none;
 }
 
 .said-image-content {
@@ -1091,22 +1423,25 @@ h6 {
 
 .said {
   background-color: white;
-  max-height: 225px;
+  max-width: 400px;
   width: 100%;
-  max-width: 325px;
-  height: 100%;
+  margin: 10px 10px;
+}
+
+.said:hover {
+  margin: 0 40px;
+  transform: scale(1.2);
 }
 
 .said p {
   font-size: 18px;
   color: #2c2d2a;
-  padding-left: 20px;
-  width: 100%; 
-  max-width: 270px;
-  padding-top: 20px;
+  padding: 25px 25px;
+  width: 375px;
   line-height: 24px;
-  padding-bottom: 25px;
 }
+
+
 
 .said-names {
   display: flex;
@@ -1221,7 +1556,8 @@ h6 {
 
 
   /* Common */
-  .navbar-names ,.freetrial-btn{
+  .navbar-names,
+  .freetrial-btn {
     display: none;
   }
 
@@ -1232,7 +1568,7 @@ h6 {
   .outer-header-container {
     width: 100%;
     background-color: #fceddf;
-    
+
   }
 
   .aboutus-image,
@@ -1241,7 +1577,7 @@ h6 {
     box-shadow: none;
   }
 
-  .ourTeamAll-btn{
+  .ourTeamAll-btn {
     text-align: center;
   }
 
@@ -1250,15 +1586,17 @@ h6 {
 
   .outer-header-container {
     width: 100%;
-  
+
   }
+
   .inner-header-container {
     max-width: 1020px;
-      width: 100%;
+    width: 100%;
     padding: 15px 15px;
-    
+
   }
-  .mobile-icon{
+
+  .mobile-icon {
     display: inline;
   }
 
@@ -1326,6 +1664,7 @@ h6 {
     flex-direction: column;
     align-items: center;
   }
+
   .service-main {
     max-width: 1020px;
     width: 100%;
@@ -1333,122 +1672,130 @@ h6 {
     height: 100%;
     background-color: #011c34;
   }
+
   .inner-service-container {
     padding-left: 50px;
     padding-right: 50px;
     padding-top: 50px;
   }
 
-.inner-service-container h2 {
-  font-size: 30px;
-  padding-top: 0px;
-  
-}
+  .inner-service-container h2 {
+    font-size: 30px;
+    padding-top: 0px;
 
-/* About Us */
+  }
 
-.inner-aboutus-container {
-  flex-direction: column;
-  align-items: center;
-}
-.aboutus-content h2 {
-  font-size: 30px; 
-  padding-bottom: 0px;
-}
+  /* About Us */
 
-.aboutus-content {
-  max-width: 766px;
-  width: 100%;
-  padding: 25px 15px;
-}
+  .inner-aboutus-container {
+    flex-direction: column;
+    align-items: center;
+  }
 
+  .aboutus-content h2 {
+    font-size: 30px;
+    padding-bottom: 0px;
+  }
 
-.area-of-specilisation-topics ul {
-  display: flex;
-  flex-wrap: wrap;
-  max-width: 550px;
-  width: 100%;
-  column-gap: 300px;
-  padding-left: 0px;
-}
+  .aboutus-content {
+    max-width: 766px;
+    width: 100%;
+    padding: 25px 15px;
+  }
 
 
-/* How it works */
-.inner-howitworks-container {
-  flex-direction: column-reverse;
-  align-items: center;
-}
-
-.howitworks-content {
-  max-width: 750px;
-  width: 100%;
-  padding-top: 25px;
-}
-
-.howitworks-content h2 {
-  font-size: 30px;
-  padding-bottom: 0px;
-}
+  .area-of-specilisation-topics ul {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 550px;
+    width: 100%;
+    column-gap: 300px;
+    padding-left: 0px;
+  }
 
 
-/* Our Team */
+  /* How it works */
+  .inner-howitworks-container {
+    flex-direction: column-reverse;
+    align-items: center;
+  }
+
+  .howitworks-content {
+    max-width: 750px;
+    width: 100%;
+    padding-top: 25px;
+  }
+
+  .howitworks-content h2 {
+    font-size: 30px;
+    padding-bottom: 0px;
+  }
 
 
-.inner-what-they-saying-container{
-  padding-left: 15px;
-  border-right-width: 15px;
-  padding-right: 15px;
-}
-.ourteam-image{
-  flex-direction: column;
-  align-items: center;
-  row-gap: 61px;
-}
-.ourteam-content h2 {
-  font-size: 30px;
-}
-
-.ourteam-names h6{
-padding-bottom: 15px;
-}
+  /* Our Team */
 
 
-/* What They Saying  */
+  .inner-what-they-saying-container {
+    padding-left: 15px;
+    border-right-width: 15px;
+    padding-right: 15px;
+  }
+
+  .ourteam-image {
+    flex-direction: column;
+    align-items: center;
+    row-gap: 61px;
+  }
+
+  .ourteam-content h2 {
+    font-size: 30px;
+  }
+
+  .ourteam-names h6 {
+    padding-bottom: 15px;
+  }
 
 
-.what-they-said{
-  flex-direction: column;
-  align-items: center;
-  row-gap: 50px;
-  max-width: 1020px;
-  width: 100%;
-  padding-bottom: 25px;
-}
-.said{
-  max-width: 1020px;
-  width: 100%;
-}
-.what-they-said p{
-  max-width: 1020px;
-  width: 100%;
-
-}.said p{
-  font-size: 16px;
-  padding-bottom: 20px;
-}
-
-.inner-what-they-saying-container h2 {
-  font-size: 30px;
-}
+  /* What They Saying  */
 
 
-/* Footer */
+  #what-they-said {
+    flex-direction: column;
+    align-items: center;
+    row-gap: 50px;
+    max-width: 1020px;
+    width: 100%;
+    padding-bottom: 25px;
+  }
 
-.inner-footer{
-  flex-direction: column;
+  .said {
+    max-width: 1020px;
+    width: 100%;
+  }
+
+  #what-they-said p {
+    max-width: 1020px;
+    width: 100%;
+
+  }
+
+  .said p {
+    font-size: 16px;
+    padding-bottom: 20px;
+  }
+
+  .inner-what-they-saying-container h2 {
+    font-size: 30px;
+  }
+
+
+  /* Footer */
+
+  .inner-footer {
+    flex-direction: column;
     padding-left: 25px;
     row-gap: 50px;
-}
+  }
 }
 
 
@@ -1700,7 +2047,7 @@ padding-bottom: 15px;
   /* What They Saying  */
 
 
-  .what-they-said {
+  #what-they-said {
     flex-direction: column;
     margin: 0 auto;
     row-gap: 50px;
@@ -1728,12 +2075,12 @@ padding-bottom: 15px;
   }
 
 
-/* Footer */
+  /* Footer */
 
-.inner-footer {
-  flex-direction: column;
-  padding-left: 25px;
-  row-gap: 50px;
-}
+  .inner-footer {
+    flex-direction: column;
+    padding-left: 25px;
+    row-gap: 50px;
+  }
 
 }
